@@ -26,8 +26,7 @@ export const NavBar = () => (
         <LogoCozza style={{backgroundColor: brandColor}} />    
         <Navbar.Brand href="/">Casa Cozza</Navbar.Brand>        
         <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-            <Nav.Item><Nav.Link href="/limpieza">Home</Nav.Link></Nav.Item>
+            <Nav className="ml-auto">            
                 <Nav.Item><Nav.Link href="/limpieza">Limpieza</Nav.Link></Nav.Item> 
                 <Nav.Item><Nav.Link href="/bazar">Bazar</Nav.Link></Nav.Item>
                 <Nav.Item><Nav.Link href="/perfumeria">Perfumería</Nav.Link></Nav.Item>
