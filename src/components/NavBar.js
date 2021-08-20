@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
-import {ReactComponent as LogoCozza} from '../logo-cozza.svg';
+import {ReactComponent as LogoCozza} from '../assets/images/logo-cozza.svg';
 
 const brandColor = "#ffdead";
 
