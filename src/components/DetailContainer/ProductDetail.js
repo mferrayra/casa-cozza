@@ -2,7 +2,7 @@ import React from 'react'
 import NumberFormat from 'react-number-format'
 import { Link, useLocation } from 'react-router-dom'
 
-export const ProductoDetail = ({categoria, articulo, detalle, precio, img, stock}) => {  
+export const ProductDetail = ({categoria, articulo, detalle, precio, img, stock}) => {  
     let arrPathname = useLocation().pathname.split("/")
     arrPathname.splice(arrPathname.length - 2, 2)        
     return (
@@ -23,7 +23,7 @@ export const ProductoDetail = ({categoria, articulo, detalle, precio, img, stock
                                 <span>Disponibles: <b>{stock}</b> hasta agotar stock!</span>
                             </div>                            
                             <br />
-                            <img src={"/images/medios-pago.png"} className={"border"}></img>
+                            <img src={"/images/medios-pago.png"} alt={"Medios de pago"} className={"border"}></img>
                             <br />
                             <br />
                             <b>Cantidad</b>

@@ -27,11 +27,11 @@ export const NavBar = () => (
         <Navbar.Brand href="/">Casa Cozza</Navbar.Brand>        
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">            
-                <Nav.Item><Nav.Link href="/limpieza">Limpieza</Nav.Link></Nav.Item> 
+                <Nav.Item><Nav.Link href="/limpieza">Limpieza</Nav.Link></Nav.Item>
                 <Nav.Item><Nav.Link href="/bazar">Bazar</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link href="/perfumeria">Perfumería</Nav.Link></Nav.Item>
+                <Nav.Item><Nav.Link href="/perfumeria">Perfumeria</Nav.Link></Nav.Item>
                 <Nav.Item><Nav.Link href="/pet-shop">Pet shop</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link style={{color: brandColor}} href="/ofertas-destacadas"><i className="fas fa-bullhorn" /> Ofertas destacadas</Nav.Link></Nav.Item>                
+                <Nav.Item><Nav.Link style={{color: brandColor}} href="/ofertas-destacadas"><i className="fas fa-bullhorn" /> Ofertas destacadas</Nav.Link></Nav.Item>
             </Nav>
         </Navbar.Collapse>
     </Navbar>

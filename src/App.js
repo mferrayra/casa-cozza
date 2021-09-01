@@ -13,24 +13,24 @@ function App() {
         <NavBar />
         <Switch>
         <Route exact path="/">
-            <ListContainer categoria={null} />
-          </Route>          
+            <ListContainer category={null} />
+          </Route>
           <Route exact path="/limpieza">
-            <ListContainer categoria={"Limpieza"} />
+            <ListContainer category={"Limpieza"} />
           </Route>
           <Route exact path="/bazar">
-            <ListContainer categoria={"Bazar"} />
+            <ListContainer category={"Bazar"} />
           </Route>  
           <Route exact path="/perfumeria">
-            <ListContainer categoria={"Perfumeria"} />
+            <ListContainer category={"Perfumeria"} />
           </Route>
           <Route exact path="/pet-shop">
-            <ListContainer categoria={"Pet Shop"} />
+            <ListContainer category={"Pet Shop"} />
           </Route>
           <Route exact path="/ofertas-destacadas">
             <h1>Ofertas destacadas en construcción</h1>
           </Route>  
-          <Route path="*/producto/:productoId">
+          <Route path="*/product/:productoId">
               <DetailContainer />
           </Route>          
           <Route path="/">
