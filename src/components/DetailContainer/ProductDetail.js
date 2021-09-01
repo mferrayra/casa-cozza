@@ -2,7 +2,7 @@ import React from 'react'
 import NumberFormat from 'react-number-format'
 import { Link, useLocation } from 'react-router-dom'
 
-export const ProductDetail = ({categoria, articulo, detalle, precio, img, stock}) => {  
+export const ProductDetail = ({category, article, detail, price, img, stock}) => {  
     let arrPathname = useLocation().pathname.split("/")
     arrPathname.splice(arrPathname.length - 2, 2)        
     return (
@@ -10,13 +10,13 @@ export const ProductDetail = ({categoria, articulo, detalle, precio, img, stock}
             <div className="card col col-5 offset-4 mt-5">                                
                 <div className="card-body">
                     <div className={"row text-justify"}>
-                    <h1>{articulo}</h1>
+                    <h1>{article}</h1>
                     </div>                    
                     <div className={"row"}>
                         <div className={"col-7"}>
-                            <img src={img} alt={articulo} className={"img-fluid w-100"}/>
-                            <h4>Precio: <b><NumberFormat value={precio} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} /></b></h4>
-                            <p>{detalle}</p>
+                            <img src={img} alt={article} className={"img-fluid w-100"}/>
+                            <h4>price: <b><NumberFormat value={price} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} /></b></h4>
+                            <p>{detail}</p>
                         </div> 
                         <div className={"col-5 text-center pt-3"}>
                             <div className={"row"}>
