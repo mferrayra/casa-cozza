@@ -20,6 +20,4 @@ Agrego imágenes, refactorizo para utilizar el router con las opciones:
  Contexto de cesta + Counter
  - Añade a la cesta cantidades de productos validadas por el contador segun stock
  - Elimina producto seleccionado a comprar en el resumen de compra
- - Vacía la cesta en el resumen de compra 
-
- * Cuando se navega un link se pierden los valores del contexto
+ - Vacía la cesta en el resumen de compra
