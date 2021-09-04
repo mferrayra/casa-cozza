@@ -15,3 +15,11 @@ Agrego imágenes, refactorizo para utilizar el router con las opciones:
  - Por default muestra todos los productos
  - En cada opcion muestra productos relacionados con la categoria asociada a la opcion
  - En cada producto permite navegar hacia el detalle (DetailContainer - ProductoDetail) con información adicional de stock y simulando poder comprar o seguir buscando (vuelta hacia atras del path que se encontraba)
+
+ # Desafío 6 y 7
+ Contexto de cesta + Counter
+ - Añade a la cesta cantidades de productos validadas por el contador segun stock
+ - Elimina producto seleccionado a comprar en el resumen de compra
+ - Vacía la cesta en el resumen de compra 
+
+ * Cuando se navega un link se pierden los valores del contexto
