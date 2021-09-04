@@ -3,6 +3,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import {ReactComponent as LogoCozza} from '../assets/images/logo-cozza.svg';
 import { CartWidget } from './CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 const brandColor = "#ffdead";
 
@@ -28,11 +29,21 @@ export const NavBar = () => (
         <Navbar.Brand href="/">Casa Cozza</Navbar.Brand>        
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">            
-                <Nav.Item><Nav.Link href="/limpieza">Limpieza</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link href="/bazar">Bazar</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link href="/perfumeria">Perfumeria</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link href="/pet-shop">Pet shop</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link style={{color: brandColor}} href="/ofertas-destacadas"><i className="fas fa-bullhorn" /> Ofertas destacadas</Nav.Link></Nav.Item>                
+                <Nav.Item>
+                  <Link style={{color:brandColor}} className={"mx-5"} to={"/limpieza"}>Limpieza</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link style={{color:brandColor}} className={"mx-5"} to={"/bazar"}>Bazar</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link style={{color:brandColor}} className={"mx-5"} to={"/perfumeria"}>Perfumeria</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link style={{color:brandColor}} className={"mx-5"} to={"pet-shop"}>Pet Shop</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link style={{color:brandColor}} className={"mx-5"} to={"/ofertas-destacadas"}><i className="fas fa-bullhorn" /> Ofertas destacadas</Link>                 
+                </Nav.Item>                
             </Nav>
             <CartWidget />
         </Navbar.Collapse>        
