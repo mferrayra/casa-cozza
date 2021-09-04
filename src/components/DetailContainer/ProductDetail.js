@@ -12,10 +12,9 @@ export const ProductDetail = ({id, category, article, detail, price, img, stock}
          addToCart({
              id, category, article, detail, price, img, count
          })
-    }
-
+    }    
     let arrPathname = useLocation().pathname.split("/")
-    arrPathname.splice(arrPathname.length - 2, 2)        
+    arrPathname.splice(arrPathname.length - 2, 2)            
     return (
         <div className="row">            
             <div className="card col col-5 offset-4 mt-5">                                
@@ -39,7 +38,7 @@ export const ProductDetail = ({id, category, article, detail, price, img, stock}
                         </div>
                     </div>                                       
                 </div>                
-                <span to={`${arrPathname.join("/")}`} className="btn btn-primary">Quiero seguir buscando...</span>
+                <Link to={`${arrPathname.filter(p=>p.length > 0).length ===0 ? "/" : "/" + arrPathname.filter(p=>p.length > 0).join("/")}`} className="btn btn-primary">Quiero seguir buscando...</Link>
             </div>            
         </div>
     )
