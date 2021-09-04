@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import NumberFormat from 'react-number-format'
 import { Link, useLocation } from 'react-router-dom'
+import { Counter } from '../Counter/Counter'
+import { CartContext } from '../../context/CartContext'
 
-export const ProductDetail = ({category, article, detail, price, img, stock}) => {  
+export const ProductDetail = ({id, category, article, detail, price, img, stock}) => {  
+    const { addToCart, isInCart } = useContext(CartContext)
+    const [count, setCount] = useState(1)
+
+    const handleAddToCart = () => {
+         addToCart({
+             id, category, article, detail, price, img, count
+         })
+    }
+
     let arrPathname = useLocation().pathname.split("/")
     arrPathname.splice(arrPathname.length - 2, 2)        
     return (
@@ -13,31 +24,22 @@ export const ProductDetail = ({category, article, detail, price, img, stock}) =>
                     <h1>{article}</h1>
                     </div>                    
                     <div className={"row"}>
-                        <div className={"col-7"}>
+                        <div className={"col-6"}>
                             <img src={img} alt={article} className={"img-fluid w-100"}/>
-                            <h4>price: <b><NumberFormat value={price} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} /></b></h4>
+                            <h4>Precio: <b><NumberFormat value={price} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} /></b></h4>
                             <p>{detail}</p>
                         </div> 
-                        <div className={"col-5 text-center pt-3"}>
+                        <div className={"col-6 text-center pt-3"}>
                             <div className={"row"}>
-                                <span>Disponibles: <b>{stock}</b> hasta agotar stock!</span>
+                                <span>Disponibles: <b>{stock - count}</b> hasta agotar stock!</span>
                             </div>                            
                             <br />
-                            <img src={"/images/medios-pago.png"} alt={"Medios de pago"} className={"border"}></img>
-                            <br />
-                            <br />
-                            <b>Cantidad</b>
-                            <br />
-                            <input type={Text} value={1} placeholder={"Poné cuantos querés comprar"} className={"text-center"} />
-                            <br />
-                            <br />
-                            <div className={"row"}>
-                                <Link to={"#"} className={"btn btn-success"}><i class="fas fa-shopping-cart fa-2x">&nbsp;Comprar</i></Link>
-                            </div>                                                        
+                            <br />                            
+                            <Counter max={stock} count={count} setCount={setCount} addToCart={handleAddToCart} added={isInCart(id)} />                            
                         </div>
                     </div>                                       
                 </div>                
-                <Link to={`${arrPathname.join("/")}`} className="btn btn-primary">Quiero seguir buscando...</Link>
+                <span to={`${arrPathname.join("/")}`} className="btn btn-primary">Quiero seguir buscando...</span>
             </div>            
         </div>
     )

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getProducts, getProductsByCategory } from '../../helpers/Products'
 import { CleaningLoader } from '../share/CleaningLoader';
-import { ProductList } from './ProductList'
+import { ProductList } from './ProductList';
 
 export const ListContainer = ({category}) => {
     const [data, setData] = useState([])

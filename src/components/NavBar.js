@@ -2,6 +2,7 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import {ReactComponent as LogoCozza} from '../assets/images/logo-cozza.svg';
+import { CartWidget } from './CartWidget/CartWidget';
 
 const brandColor = "#ffdead";
 
@@ -31,9 +32,10 @@ export const NavBar = () => (
                 <Nav.Item><Nav.Link href="/bazar">Bazar</Nav.Link></Nav.Item>
                 <Nav.Item><Nav.Link href="/perfumeria">Perfumeria</Nav.Link></Nav.Item>
                 <Nav.Item><Nav.Link href="/pet-shop">Pet shop</Nav.Link></Nav.Item>
-                <Nav.Item><Nav.Link style={{color: brandColor}} href="/ofertas-destacadas"><i className="fas fa-bullhorn" /> Ofertas destacadas</Nav.Link></Nav.Item>
+                <Nav.Item><Nav.Link style={{color: brandColor}} href="/ofertas-destacadas"><i className="fas fa-bullhorn" /> Ofertas destacadas</Nav.Link></Nav.Item>                
             </Nav>
-        </Navbar.Collapse>
+            <CartWidget />
+        </Navbar.Collapse>        
     </Navbar>
   </Styles>
 )

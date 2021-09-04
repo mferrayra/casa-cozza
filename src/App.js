@@ -5,10 +5,13 @@ import { Switch, BrowserRouter as Router, Route, Redirect} from "react-router-do
 import { NavBar } from './components/NavBar';
 import { ListContainer } from './components/ListContainer/ListContainer';
 import { DetailContainer } from './components/DetailContainer/DetailContainer';
+import { CartContextProvider } from './context/CartContext';
+import { CartScreen } from './components/CartScreen/CartScreen';
 
 function App() {  
   return (
     <>
+      <CartContextProvider>
       <Router>        
         <NavBar />
         <Switch>
@@ -32,12 +35,16 @@ function App() {
           </Route>  
           <Route path="*/product/:productoId">
               <DetailContainer />
-          </Route>          
+          </Route>   
+          <Route exact path="/shopping-cart">
+              <CartScreen />
+          </Route>       
           <Route path="/">
               <Redirect to="/"/>
           </Route>
         </Switch>        
       </Router>
+      </CartContextProvider>      
     </>    
   );
 }
