@@ -1,6 +1,7 @@
 import { ProductItem } from "./ProductItem"
+import React from 'react';
 
-export const ProductList = ({ category, products = [] }) => {
+export const ProductList = React.memo(({ category, products = [] }) => {
     return (        
         <section className="container my-5">
             <h2>{category ? category : "Todos los productos"}</h2>
@@ -10,4 +11,4 @@ export const ProductList = ({ category, products = [] }) => {
             </div>
         </section>
     )
-}
+})

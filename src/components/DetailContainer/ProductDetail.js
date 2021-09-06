@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Counter } from '../Counter/Counter'
 import { CartContext } from '../../context/CartContext'
 
-export const ProductDetail = ({id, category, article, detail, price, img, stock}) => {  
+export const ProductDetail = React.memo(({id, category, article, detail, price, img, stock}) => {  
     const { addToCart, isInCart } = useContext(CartContext)
     const [count, setCount] = useState(1)
 
@@ -38,8 +38,8 @@ export const ProductDetail = ({id, category, article, detail, price, img, stock}
                         </div>
                     </div>                                       
                 </div>                
-                <Link to={`${arrPathname.filter(p=>p.length > 0).length ===0 ? "/" : "/" + arrPathname.filter(p=>p.length > 0).join("/")}`} className="btn btn-primary">Quiero seguir buscando...</Link>
+                <Link className="m-0 btn btn-primary" to={`${arrPathname.filter(p=>p.length > 0).length ===0 ? "/" : "/" + arrPathname.filter(p=>p.length > 0).join("/")}`}>Quiero seguir buscando...</Link>
             </div>            
         </div>
     )
-}
+})

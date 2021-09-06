@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
+import React from 'react';
 
-export const Counter = ({max, count, setCount, addToCart, added}) => {
+export const Counter = React.memo(({max, count, setCount, addToCart, added}) => {
 	const handleSumar = () => {
 		if (count < max){			
 			setCount(count+1)
@@ -28,4 +29,4 @@ export const Counter = ({max, count, setCount, addToCart, added}) => {
 			</div>
 		</>
 	)
-}
+})

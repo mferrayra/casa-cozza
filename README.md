@@ -21,3 +21,10 @@ Agrego imágenes, refactorizo para utilizar el router con las opciones:
  - Añade a la cesta cantidades de productos validadas por el contador segun stock
  - Elimina producto seleccionado a comprar en el resumen de compra
  - Vacía la cesta en el resumen de compra
+
+ # Desafío 7 y 8
+ Firebase + CartScreen
+ - Agrega un spinner e inhabilita el navbar cuando se clickea una opción
+ - Conecta con firebase (ojo con la sintaxis; funciona para la versión descargada actual)
+ - Filtra por menu como lo hacía cuando estaba mockeado (todos en el barra, y filtra por opción; menos las ofertas destacadas que no está desarrollado)
+ - Muestra el CartScreen totalizado por categoria y por todal final; y permite cancelar la compra (vaciar la cesta)

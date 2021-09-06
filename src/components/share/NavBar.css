@@ -1,0 +1,27 @@
+header { 
+  background-color: #222; 
+  display:  flex;
+  padding-left:  1.5em; 
+  padding-right:  1.5em; 
+  padding-bottom:  0.5em; 
+}
+
+a {
+  margin-left: 3em;
+  color: #9FFFCB;  
+  text-decoration: none;      
+}
+a:hover{
+  color: white; 
+}
+
+.navbar-brand {
+  margin-left: 0.5em;
+  font-size: 1.8em;
+  color: #ffdead;  
+}
+
+.disabled{
+  pointer-events: none;
+  opacity: 0.4;
+}

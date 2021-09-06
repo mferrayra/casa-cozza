@@ -1,6 +1,7 @@
 import Loader from 'react-loader-spinner';
+import React from 'react';
 
-export const CleaningLoader = ({ title }) => {
+export const CleaningLoader = React.memo(({ title }) => {
     return (
         <>
             <section className="container my-5 text-center text-primary">
@@ -10,4 +11,4 @@ export const CleaningLoader = ({ title }) => {
             </section>            
         </>
     )
-}
+})
