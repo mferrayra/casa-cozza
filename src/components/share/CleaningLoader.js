@@ -1,3 +1,7 @@
+/*
+* Componente para el spinner
+*/
+
 import Loader from 'react-loader-spinner';
 import React from 'react';
 

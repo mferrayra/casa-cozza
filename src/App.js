@@ -1,4 +1,5 @@
-import React from 'react';
+/*App con los routes y los envoltorios de los providers*/
+import React, { useEffect } from 'react';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Switch, BrowserRouter as Router, Route, Redirect} from "react-router-dom";
@@ -8,8 +9,13 @@ import { DetailContainer } from './components/DetailContainer/DetailContainer';
 import { CartContextProvider } from './context/CartContext';
 import { UIContextProvider } from './context/UIContext';
 import { CartScreen } from './components/CartScreen/CartScreen';
+import { ReactSession } from 'react-client-session';
+import { NotLogin } from './components/NotLogin/NotLogin'
 
 function App() {  
+  useEffect(() => {
+    ReactSession.setStoreType("localStorage")    
+  }, [])
   return (
     <>
       <UIContextProvider>
@@ -37,10 +43,15 @@ function App() {
               </Route>  
               <Route path="*/product/:productId">
                   <DetailContainer />
-              </Route>   
+              </Route>              
               <Route exact path="/shopping-cart">
+                {
                   <CartScreen />
-              </Route>       
+                }
+              </Route>  
+              <Route exact path="/not-login">
+                  <NotLogin />
+              </Route>    
               <Route path="/">
                   <Redirect to="/"/>
               </Route>

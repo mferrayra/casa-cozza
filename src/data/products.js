@@ -1,3 +1,4 @@
+/*Mock de productos*/
 export const products = [
     {
         id: 1,

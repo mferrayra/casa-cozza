@@ -1,9 +1,14 @@
+/*
+* Este componente atomiza el render para la agrupacion de productos por categoria
+* con totalizado y función para eliminar productos en forma individual. 
+*/
+
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import NumberFormat from 'react-number-format'
 
 export const CategoryProducts = React.memo(({category}) => {
-	const  {cart, removeFromCart} = useContext(CartContext)	
+	const  {cart, removeFromCart} = useContext(CartContext)	// desagrupa productos y el metodo remover un elemento del carrito
 	return (
 		<>
 			<table className={"table"}>

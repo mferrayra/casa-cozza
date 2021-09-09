@@ -1,0 +1,11 @@
+.delimiter {
+  padding: 1rem;  
+}
+
+.btn-social {
+    margin: 0 0.5rem 1rem;
+  }
+
+.btn-round {
+  border-radius: 3rem;
+}

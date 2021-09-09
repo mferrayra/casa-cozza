@@ -1,3 +1,9 @@
+/*
+* Componente que renderiza el detalle del producto con el componente counter, 
+* para agregar productos al carrito.
+* Tambien permite volver hacia atras para seguir buscando productos.
+*/
+
 import React, { useContext, useState } from 'react'
 import NumberFormat from 'react-number-format'
 import { Link, useLocation } from 'react-router-dom'
@@ -5,14 +11,16 @@ import { Counter } from '../Counter/Counter'
 import { CartContext } from '../../context/CartContext'
 
 export const ProductDetail = React.memo(({id, category, article, detail, price, img, stock}) => {  
-    const { addToCart, isInCart } = useContext(CartContext)
+    const { addToCart, isInCart } = useContext(CartContext) // desagrupa los metodos para agregar y saber si un producto esta agregado al carrito
     const [count, setCount] = useState(1)
 
+    // handle para agregar el producto
     const handleAddToCart = () => {
          addToCart({
              id, category, article, detail, price, img, count
          })
     }    
+    // para obtener la url por si quiere volver atras con el boton para seguir buscando
     let arrPathname = useLocation().pathname.split("/")
     arrPathname.splice(arrPathname.length - 2, 2)            
     return (

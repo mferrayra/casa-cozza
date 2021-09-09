@@ -1,3 +1,7 @@
+/*
+* Este componente renderiza una card de cada producto a mostrar segun lista a mostrar.
+*/
+
 import React from 'react'
 import NumberFormat from 'react-number-format'
 import { Link, useLocation } from 'react-router-dom'

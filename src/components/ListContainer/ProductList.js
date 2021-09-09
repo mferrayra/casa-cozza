@@ -1,3 +1,8 @@
+/*
+* Este componente hace un map de la lista de productos a mostar con el componente idividual del 
+* producto a mostrar.
+*/
+
 import { ProductItem } from "./ProductItem"
 import React from 'react';
 
