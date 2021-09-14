@@ -118,7 +118,7 @@ export const products = [
         stock: 8
     },
     {
-        id: 13,
+        id: 14,
         category: 'Bazar',
         article: 'REGADERA DESES PLASTICO ROJA',
         detail: 'La felicidad de tus plantitas',
@@ -127,7 +127,7 @@ export const products = [
         stock: 25
     },
     {
-        id: 14,
+        id: 15,
         category: 'Bazar',
         article: 'EMBUDO ECO NRO 8',
         detail: 'Muy util para tener a mano',
@@ -136,7 +136,7 @@ export const products = [
         stock: 51
     },
     {
-        id: 15,
+        id: 16,
         category: 'Bazar',
         article: 'PALANGANA 6 LTS',
         detail: 'Nunca está de mas',
@@ -145,7 +145,7 @@ export const products = [
         stock: 7
     },
     {
-        id: 16,
+        id: 17,
         category: 'Bazar',
         article: 'CESTO DE RESIDUOS 6 LTS CON TAPA',
         detail: 'Económico y resistente',
@@ -154,7 +154,7 @@ export const products = [
         stock: 46
     },
     {
-        id: 17,
+        id: 18,
         category: 'Perfumeria',
         article: 'ESPUMA PRESTOBARBA NORMAL',
         detail: 'Económica y rendidora',
@@ -163,7 +163,7 @@ export const products = [
         stock: 75
     },
     {
-        id: 18,
+        id: 19,
         category: 'Perfumeria',
         article: 'SHAMPOO PANTEN BRILLO EXTREMO',
         detail: 'Tu melena como debe ser',
@@ -172,7 +172,7 @@ export const products = [
         stock: 39
     },
     {
-        id: 19,
+        id: 20,
         category: 'Perfumeria',
         article: 'SHAMPOO SEDAL CERAMIDAS 190 CC',
         detail: 'Repará tu cabello rapidamente',
@@ -181,7 +181,7 @@ export const products = [
         stock: 47
     },
     {
-        id: 20,
+        id: 21,
         category: 'Perfumeria',
         article: 'TOALLAS FEMENINAS ALWAYS',
         detail: 'Sentite cómoda',
@@ -190,7 +190,7 @@ export const products = [
         stock: 38
     },
     {
-        id: 21,
+        id: 22,
         category: 'Perfumeria',
         article: 'DES REXONA EXTRA COOL 90 GR',
         detail: 'Fragancia que te merecés',
@@ -199,7 +199,7 @@ export const products = [
         stock: 20
     },
     {
-        id: 22,
+        id: 23,
         category: 'Perfumeria',
         article: 'TALCO VERITAS PARA PIES 180 GR',
         detail: 'Nunca mas pies malolientes',
@@ -208,7 +208,7 @@ export const products = [
         stock: 15
     },
     {
-        id: 23,
+        id: 24,
         category: 'Perfumeria',
         article: 'JABON LIQUIDO LISOFORM 250 CC',
         detail: 'Fino aroma a limpieza',
@@ -217,7 +217,7 @@ export const products = [
         stock: 40
     },
     {
-        id: 24,
+        id: 25,
         category: 'Perfumeria',
         article: 'QUITA ESMALTE CUTEX FORTALECEDOR',
         detail: 'Uñas prolijas como te mereces',
@@ -226,7 +226,7 @@ export const products = [
         stock: 27
     },
     {
-        id: 25,
+        id: 26,
         category: 'Pet Shop',
         article: 'COLLAR MASCOTA 60 CM',
         detail: 'Una mascota coqueta, es una mascota feliz',
@@ -235,7 +235,7 @@ export const products = [
         stock: 35
     },
     {
-        id: 26,
+        id: 27,
         category: 'Pet Shop',
         article: 'DISPENSER COMEDERO AUTOMATICO',
         detail: 'Tu perro siempre satisfecho',
@@ -244,7 +244,7 @@ export const products = [
         stock: 9
     },
     {
-        id: 27,
+        id: 28,
         category: 'Pet Shop',
         article: 'ABRIGO PARA MASCOTA DRAGON',
         detail: 'Adiós al frío en tu perrito',

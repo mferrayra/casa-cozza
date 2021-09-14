@@ -14,26 +14,28 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext'
 import NumberFormat from 'react-number-format'
 import { CategoryProducts } from './CategoryProducts'
-import { UIContext } from '../../context/UIContext';
-import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const CartScreen = React.memo(() => {
-	const {cart, emptyCart} = useContext(CartContext) // contexto del carrito: se desagrupan los productos agregados y el metodo para vaciar el carrito
-	const {email} = useContext(UIContext) // conexto UI: de desagrupa el email para saber si se está logueado
-	const history = useHistory()
-
-	// redirect si no se está logueado
-	if (!email || email.length === 0){
-		history.push('/not-login')
-	}
+	const {cart, emptyCart} = useContext(CartContext) // contexto del carrito: se desagrupan los productos agregados y el metodo para vaciar el carrito	
 
 	return (
 		<>
+			<div className="row">
+				<div className="col-4 offset-9">
+					<Link to="/" className={"btn btn-social mt-4 mb-4 d-flex"}><i className={"fa fa-cart-plus fa-2x"}></i> <h4>Añadir productos</h4></Link>
+				</div>				
+			</div>
+			
 			{
 				cart.length === 0 ? 
-					<h2><i className={"fa fa-frown text-warning"}></i> No añadiste nada aun...</h2> :					
-					<>
-						<h2>Tu resumen de compra</h2>						
+					<div className="row">
+						<div className="col-10 offset-1">
+							<h3 className="btn-primary btn-round p-2">No añadiste nada aun...<i className={"fa fa-frown text-warning"}></i></h3>	
+						</div>						
+					</div> :
+					<div className="container">
+						<h3>Tu resumen de compra</h3>						
 						{
 							(cart.some(p=>p.category==="Limpieza")) && <CategoryProducts category={"Limpieza"} />							
 						}
@@ -49,13 +51,13 @@ export const CartScreen = React.memo(() => {
 						<div className={"row text-end p-3"}><h4>Total Final: {<NumberFormat value={cart.reduce((total, product) => total + (product.price * product.count), 0)} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} />}</h4></div>
 						<div className={"row"}>
 							<div className={"col-2"}>
-								<button className={"btn btn-success"} >$$$ Quiero Pagar!</button>
+								<button className={"btn btn-success"} ><i className={"fa fa-check-square"}></i> Finalizar la compra</button>
 							</div>
 							<div className={"col-2"}>
-								<button className={"btn btn-danger"} onClick={()=>emptyCart()} ><i className={"fa fa-trash"}></i> Cancelar Compra!</button>
-							</div>
+								<button className={"btn btn-danger"} onClick={()=>emptyCart()} ><i className={"fa fa-trash"}></i> Cancelar la Compra</button>
+							</div>							
 						</div>
-					</>
+					</div>
 			}			
 		</>
 	)

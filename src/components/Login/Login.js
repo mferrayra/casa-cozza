@@ -9,12 +9,10 @@
 
 import React, { useContext, useRef, useState } from "react";
 import { Link } from 'react-router-dom'
-import { ReactSession } from 'react-client-session';
 import './Login.css'
 import Modal from "react-modal";
-import { UIContext } from '../../context/UIContext';
+import { AppContext } from '../../context/AppContext';
 import { CartContext } from '../../context/CartContext';
-import { useHistory, useLocation } from 'react-router-dom'
 
 // style del popup
 const customStyles = {
@@ -31,21 +29,22 @@ const customStyles = {
 // popup en el root
 Modal.setAppElement("#root");
 
-export const Login = () => {
-  const history = useHistory()
-  const location = useLocation()
+export const Login = () => {  
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
   const [modalIsOpen, setIsOpen] = useState(false);   
-  const {email, setEmail} = useContext(UIContext)
+  const {user, setUser} = useContext(AppContext)
   const {emptyCart} = useContext(CartContext)
 
   // modal login
-  const openModal = () => {
+  const openModal = (event) => {
+    event.preventDefault()
     setIsOpen(true);
   }
 
   const afterOpenModal = () => {
+    emailInputRef.current.value = "mdferrayra@gmail.com"
+    passwordInputRef.current.value = "password"
     emailInputRef.current.focus()
   }
 
@@ -54,40 +53,40 @@ export const Login = () => {
   }
 
   // logout
-  const handleLogout = () => {    
-    setEmail("")
-    ReactSession.set("email", "")
+  const handleLogout = (event) => {
+    event.preventDefault()    
+    setUser(null)
     emptyCart()   
   }
 
   // login user
-  const handleLogin = () => {    
-    // in the future, here save jwt from some service...    
-    setEmail(emailInputRef.current.value)    
-    ReactSession.set("email", emailInputRef.current.value)
-    closeModal() 
-    if (location.pathname === '/not-login'){
-      history.push('/')     
-    }    
+  const handleLogin = (event) => {    
+    // in the future, here save jwt from some service... 
+    event.preventDefault()   
+    setUser({ 
+      email: emailInputRef.current.value,
+      password: passwordInputRef.current.value
+    })   
+    closeModal()    
   }
 
-  // para cuando no este logueadp
+  // para cuando no este logueado
   const getLoginTag = () => {    
-    return <Link onClick={openModal}>
+    return <Link to="/#" onClick={openModal}>
              <span><i className="fa fa-user fa-2x"></i></span>
            </Link>
   }
 
   // para cuando este logueado
   const getLogoutTag = () => {
-    return <Link onClick={handleLogout}>
-             <span>{email}&nbsp;<i className="fas fa-sign-out-alt fa-2x"></i></span>
+    return <Link to="/#" onClick={handleLogout}>
+             <span>{user.email}&nbsp;<i className="fas fa-sign-out-alt fa-2x"></i></span>
            </Link> 
   }
 
   return (
     <>
-      {email && email.length > 0 ? getLogoutTag() : getLoginTag()}            
+      {user ? getLogoutTag() : getLoginTag()}            
       <Modal className="container-fluid main_container" isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
@@ -134,7 +133,7 @@ export const Login = () => {
                     </div>
                     <div>
                       <span className="small text-end mx-1">No recordás tu contraseña?</span>
-                      <Link className="text-primary small text-start flex-grow-1 mx-1">Registrate</Link>
+                      <Link to="/#" className="text-primary small text-start flex-grow-1 mx-1">Registrate</Link>
                     </div>                                        
                   </div>                  
                 </div>                

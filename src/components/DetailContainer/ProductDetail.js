@@ -9,9 +9,11 @@ import NumberFormat from 'react-number-format'
 import { Link, useLocation } from 'react-router-dom'
 import { Counter } from '../Counter/Counter'
 import { CartContext } from '../../context/CartContext'
+import { AppContext } from '../../context/AppContext'
 
 export const ProductDetail = React.memo(({id, category, article, detail, price, img, stock}) => {  
     const { addToCart, isInCart } = useContext(CartContext) // desagrupa los metodos para agregar y saber si un producto esta agregado al carrito
+    const { user } = useContext(AppContext)
     const [count, setCount] = useState(1)
 
     // handle para agregar el producto
@@ -21,8 +23,8 @@ export const ProductDetail = React.memo(({id, category, article, detail, price, 
          })
     }    
     // para obtener la url por si quiere volver atras con el boton para seguir buscando
-    let arrPathname = useLocation().pathname.split("/")
-    arrPathname.splice(arrPathname.length - 2, 2)            
+    let arrPathname = useLocation().pathname.split("/")    
+    arrPathname.splice(arrPathname.length - 2, 2)        
     return (
         <div className="row">            
             <div className="card col col-5 offset-4 mt-5">                                
@@ -38,11 +40,13 @@ export const ProductDetail = React.memo(({id, category, article, detail, price, 
                         </div> 
                         <div className={"col-6 text-center pt-3"}>
                             <div className={"row"}>
-                                <span>Disponibles: <b>{stock - count}</b> hasta agotar stock!</span>
+                                <span>Disponibles: <b>{stock}</b> hasta agotar stock!</span>
                             </div>                            
                             <br />
-                            <br />                            
-                            <Counter max={stock} count={count} setCount={setCount} addToCart={handleAddToCart} added={isInCart(id)} />                            
+                            <br />
+                            <div className={user ? "" : "disabled"}>
+                                <Counter max={stock} count={count} setCount={setCount} addToCart={handleAddToCart} added={isInCart(id)} />
+                            </div>                            
                         </div>
                     </div>                                       
                 </div>                

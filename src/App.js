@@ -1,5 +1,5 @@
 /*App con los routes y los envoltorios de los providers*/
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Switch, BrowserRouter as Router, Route, Redirect} from "react-router-dom";
@@ -7,18 +7,13 @@ import { NavBar } from './components/NavBar';
 import { ListContainer } from './components/ListContainer/ListContainer';
 import { DetailContainer } from './components/DetailContainer/DetailContainer';
 import { CartContextProvider } from './context/CartContext';
-import { UIContextProvider } from './context/UIContext';
+import { AppContextProvider } from './context/AppContext';
 import { CartScreen } from './components/CartScreen/CartScreen';
-import { ReactSession } from 'react-client-session';
-import { NotLogin } from './components/NotLogin/NotLogin'
 
-function App() {  
-  useEffect(() => {
-    ReactSession.setStoreType("localStorage")    
-  }, [])
+function App() {    
   return (
     <>
-      <UIContextProvider>
+      <AppContextProvider>
         <CartContextProvider>
           <Router>        
             <NavBar />
@@ -37,10 +32,7 @@ function App() {
               </Route>
               <Route exact path="/pet-shop">
                 <ListContainer category={"Pet Shop"} />
-              </Route>
-              <Route exact path="/ofertas-destacadas">
-                <h1>Ofertas destacadas en construcción</h1>
-              </Route>  
+              </Route>              
               <Route path="*/product/:productId">
                   <DetailContainer />
               </Route>              
@@ -48,17 +40,14 @@ function App() {
                 {
                   <CartScreen />
                 }
-              </Route>  
-              <Route exact path="/not-login">
-                  <NotLogin />
-              </Route>    
+              </Route>                
               <Route path="/">
                   <Redirect to="/"/>
               </Route>
             </Switch>        
           </Router>
         </CartContextProvider>
-      </UIContextProvider>      
+      </AppContextProvider>      
     </>    
   )
 }

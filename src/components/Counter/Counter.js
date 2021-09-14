@@ -3,26 +3,15 @@
 * que va de 1 y como máximo hasta el stock permitido; la mismo tiempo
 * permite añadir el productos con las cantidades al contexto de carrito
 * para poder sincronizar.
-* Si no se está logueado, no permite añadir al carrito, redirige al 
-* componnete NoLogin que indica que debe loguearse para operar.
 */
 
 import { Link } from 'react-router-dom'
-import React, { useContext } from 'react';
-import { UIContext } from '../../context/UIContext';
-import { useHistory } from 'react-router-dom'
+import React from 'react';
 
-export const Counter = React.memo(({max, count, setCount, addToCart, added}) => {
-	const {email} = useContext(UIContext) // desagrupa el email para saber si esta logueado
-	const history = useHistory()
-
+export const Counter = React.memo(({max, count, setCount, addToCart, added}) => {	
 	// añade productos si el usuario esta logueado
 	const handleAddToCart = () => {
-		if (!email || email.length ===0){
-			history.push('/not-login')	// redirect
-		} else {
-			addToCart()
-		}		
+		addToCart()		
 	}
 
 	// incrementa la cantidad en funcion del maximo (stock)
