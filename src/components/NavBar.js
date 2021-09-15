@@ -1,5 +1,5 @@
 /*
-* Componente del navbar
+* Navbar Component: renderiza la barra de menu horizontal superior
 */
 import React, { useContext } from 'react';
 import {ReactComponent as LogoCozza} from '../assets/images/logo-cozza.svg';
@@ -10,6 +10,7 @@ import './share/NavBar.css'
 import { Login } from '../components/Login/Login'
 
 export const NavBar = React.memo(() => {
+  // habilita/deshabilita navbar, user mocked
   const { enableNavBar, user } = useContext(AppContext)
   return (
     <header className={ enableNavBar ? "" : "disabled"}>

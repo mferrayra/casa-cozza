@@ -1,12 +1,12 @@
 /*
-* Este componente renderiza una card de cada producto a mostrar segun lista a mostrar.
+* ProductItem Component: renderiza una card de un producto que se indica
 */
-
 import React from 'react'
 import NumberFormat from 'react-number-format'
 import { Link, useLocation } from 'react-router-dom'
 
 export const ProductItem = React.memo(({id, article, detail, price, img}) => {    
+    // path para el detalle del producto
     let arrPathname = useLocation().pathname.split("/").filter(p => p || p.length>0)    
     arrPathname.push("product")
     arrPathname.push(`${id}`)

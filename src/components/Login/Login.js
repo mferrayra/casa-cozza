@@ -1,10 +1,5 @@
 /*
-* Este componente representa un login; y por proposito de no extenderse en una autenticacion completa
-* funciona de la siguiente manera: Si el usuario no esta logueado tiene que hacerlo para poder operar
-* con el carrito y es aqui en donde el usuario cargara un email y password, y sin validaciones lo autenticara 
-* con el email en la sesion de localstorage. Si hay un email en el storage, el componente navbar carga el valor 
-* en el contexto de la UI, y de esta manera podrá operar con el carrito. El usuario, tambienpodrá hacer logout 
-* y de esta manera elimiar el email del storage y vaciar el carrito (simulando abandonar la tienda).
+* Login Component: renderiza un popup login mocked (para poder operar con el carrito)
 */
 
 import React, { useContext, useRef, useState } from "react";
@@ -42,12 +37,14 @@ export const Login = () => {
     setIsOpen(true);
   }
 
+  // mock login
   const afterOpenModal = () => {
     emailInputRef.current.value = "mdferrayra@gmail.com"
     passwordInputRef.current.value = "password"
     emailInputRef.current.focus()
   }
 
+  // cerrar el modal
   const closeModal = () => {
     setIsOpen(false);
   }
@@ -65,7 +62,9 @@ export const Login = () => {
     event.preventDefault()   
     setUser({ 
       email: emailInputRef.current.value,
-      password: passwordInputRef.current.value
+      phone: '3416913431',
+      names: 'Martin Ferrayra',
+      address: 'Rusiñol 436 - (2000) Rosario'
     })   
     closeModal()    
   }
@@ -80,7 +79,7 @@ export const Login = () => {
   // para cuando este logueado
   const getLogoutTag = () => {
     return <Link to="/#" onClick={handleLogout}>
-             <span>{user.email}&nbsp;<i className="fas fa-sign-out-alt fa-2x"></i></span>
+             <span>{user.names}&nbsp;<i className="fas fa-sign-out-alt fa-2x"></i></span>
            </Link> 
   }
 

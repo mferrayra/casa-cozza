@@ -1,21 +1,23 @@
 /*
-* Componente para traer la lista de productos a mostrar: todos o por categoria.0
-* Funciona con firebase 9.0.1. Queda comentado el mockeo.
+* ListContainer Component: obtiene y renderiza una lista de productos (todos o por categoria)
 */
-
 import React, { useContext, useEffect, useState } from 'react'
-import { getProducts } from '../../helpers/Products'
+import { getProducts } from '../../helpers/Product'
 import { CleaningLoader } from '../share/CleaningLoader';
 import { ProductList } from './ProductList';
 import { AppContext } from '../../context/AppContext'
 
 export const ListContainer = React.memo(({category}) => {
+    // lista de productos
     const [data, setData] = useState([])
-    const { enableNavBar, setEnableNavBar } = useContext(AppContext) // desagrupa de UI context para deshabilitar la navbar y evitar comportamientos no deseados
+    // habilitar/deshabilitar navbar
+    const { enableNavBar, setEnableNavBar } = useContext(AppContext)
 
+    // montaje
     useEffect(()=> {        
         setEnableNavBar(false)
 
+        // products promise
         let productosPromise = getProducts(category)
 
         productosPromise.then(res =>{

@@ -25,7 +25,11 @@ Agrego imágenes, refactorizo para utilizar el router con las opciones:
  # Desafío 7 y 8
  Firebase + CartScreen
  - Agrega un spinner e inhabilita el navbar cuando se clickea una opción
- - Conecta con firebase (ojo con la sintaxis; funciona para la versión descargada actual)
- - Filtra por menu como lo hacía cuando estaba mockeado (todos en el barra, y filtra por opción; menos las ofertas destacadas que no está desarrollado)
+ - Conecta con firebase (firebase 9)
+ - Filtra por menu como lo hacía cuando estaba mockeado 
  - Muestra el CartScreen totalizado por categoria y por todal final; y permite cancelar la compra (vaciar la cesta)
  - Extras: comentarios, autenticación con propósito de simulación para agregar funcionalidad
+
+ # Desafío 9
+ Firebase Item Collection II
+ - Checkout: Genera una orden de compra (firebase 9)

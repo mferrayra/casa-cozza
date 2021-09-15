@@ -1,24 +1,26 @@
 /*
-* Este componente obtiene un producto en funcion del identificador del producto (parametro),
-* para posteriormente renderizar el componente de detalle para el agregado en el carrito.
-* Funciona con firebase 9.0.1. Queda comentado el mockeo.
+* DetailContainer Component: busca un producto y lo renderiza
 */
 
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductById } from "../../helpers/Products"
+import { getProductById } from "../../helpers/Product"
 import { ProductDetail } from './ProductDetail'
 import { CleaningLoader } from '../share/CleaningLoader'
 import { AppContext } from '../../context/AppContext'
 
 export const DetailContainer = React.memo(() => {
-    const { productId } = useParams()   
+    // parametro rest (identificador)
+    const { productId } = useParams()
+    // produto   
     const [producto, setProducto] = useState(null)
+    // habilitar (o no) navbar
     const { enableNavBar, setEnableNavBar } = useContext(AppContext) // se desagrupa de UI context para poder habilitar y deshabilitar el navbar y evitar coportamientos no deseados
 
+    // montaje
     useEffect(()=>{
         setEnableNavBar(false)
-        
+        // get producto por id
         getProductById(productId).then(data => {             
             setProducto(data)            
         })

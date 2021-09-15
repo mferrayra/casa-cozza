@@ -1,10 +1,6 @@
 /*
-* Componente que permite, seleccionar una cantidad de elementos 
-* que va de 1 y como máximo hasta el stock permitido; la mismo tiempo
-* permite añadir el productos con las cantidades al contexto de carrito
-* para poder sincronizar.
+* Counter Component: renderiza un contador de cantidades a añadir que se sincroniza con el CartContext
 */
-
 import { Link } from 'react-router-dom'
 import React from 'react';
 

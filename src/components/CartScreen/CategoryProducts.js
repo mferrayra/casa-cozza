@@ -1,6 +1,5 @@
 /*
-* Este componente atomiza el render para la agrupacion de productos por categoria
-* con totalizado y función para eliminar productos en forma individual. 
+* CartCategory component: renderiza productos añadidos para una categoria
 */
 
 import React, { useContext } from 'react';
@@ -8,7 +7,8 @@ import { CartContext } from '../../context/CartContext';
 import NumberFormat from 'react-number-format'
 
 export const CategoryProducts = React.memo(({category}) => {
-	const  {cart, removeFromCart} = useContext(CartContext)	// desagrupa productos y el metodo remover un elemento del carrito
+	// carrito, remover un producto, importe total por categoria, importe total por producto
+	const  {cart, removeFromCart, getTotalPurchaseByCategory, getTotalPurchaseByProduct} = useContext(CartContext)	// desagrupa productos y el metodo remover un elemento del carrito
 	return (
 		<>
 			<h4>{category}</h4>
@@ -29,7 +29,7 @@ export const CategoryProducts = React.memo(({category}) => {
 								<th scope={"row"}>{product.article} <img style={{ "width": "50px"}} src={product.img} alt="product" /></th>							
 								<td><NumberFormat value={product.price} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} /></td>
 								<td>{product.count}</td>							
-								<td className={"text-end"}><NumberFormat value={product.price * product.count} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} /></td>						
+								<td className={"text-end"}><NumberFormat value={getTotalPurchaseByProduct(product.id)} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} /></td>						
 								<td><span onClick={()=>removeFromCart(product.id)}><i className={"fa fa-trash"}></i></span></td>							
 							</tr>
 						))
@@ -38,7 +38,7 @@ export const CategoryProducts = React.memo(({category}) => {
 				<tfoot>
 					<tr>
 						<td colSpan={4} className={"text-end"}>
-							<NumberFormat value={cart.filter(p=>p.category===category).reduce((total, product) => total + (product.price * product.count), 0)} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} />							
+							<NumberFormat value={getTotalPurchaseByCategory(category)} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} />							
 						</td>						
 					</tr>
 				</tfoot>

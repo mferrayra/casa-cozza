@@ -1,13 +1,5 @@
 /*
-* Este componente permite visualizar el resumen de compra del carrito 
-* agrupado y totalizado por categoria y con total final de la compra.
-* También permite eliminar elementos del carrito, como asi también
-* eliminar la compra completa, es decir vaciar el carrito.
-* El botón [$$$ Quiero Pagar!] es solamente ilustrativo.
-* Si no hay ningún producto agregado al carrito, sale una leyenda que 
-* indica que no hay elementos añadidos.
-* Si un usuario no se logueo, redirije a una página que indica que hay que 
-* hay que iniciar sesion para operar con el carrito.
+* CartScreen component: renderiza todos los productos añadidos, agrupado por categoria y totalizados
 */
 
 import React, { useContext } from 'react';
@@ -17,7 +9,8 @@ import { CategoryProducts } from './CategoryProducts'
 import { Link } from 'react-router-dom'
 
 export const CartScreen = React.memo(() => {
-	const {cart, emptyCart} = useContext(CartContext) // contexto del carrito: se desagrupan los productos agregados y el metodo para vaciar el carrito	
+	// carrito, vaciar carrito, obtener el importe total a pagar
+	const {cart, emptyCart, getTotalPurchase} = useContext(CartContext)
 
 	return (
 		<>
@@ -35,7 +28,7 @@ export const CartScreen = React.memo(() => {
 						</div>						
 					</div> :
 					<div className="container">
-						<h3>Tu resumen de compra</h3>						
+						<h3>Tu detalle de compra</h3>						
 						{
 							(cart.some(p=>p.category==="Limpieza")) && <CategoryProducts category={"Limpieza"} />							
 						}
@@ -48,10 +41,10 @@ export const CartScreen = React.memo(() => {
 						{
 							(cart.some(p=>p.category==="Pet Shop")) && <CategoryProducts category={"Pet Shop"} />
 						}
-						<div className={"row text-end p-3"}><h4>Total Final: {<NumberFormat value={cart.reduce((total, product) => total + (product.price * product.count), 0)} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} />}</h4></div>
+						<div className={"row text-end p-3"}><h4>Total Final: {<NumberFormat value={getTotalPurchase()} displayType={"text"} thousandSeparator={true} prefix={"$"} fixedDecimalScale={true} decimalScale={2} />}</h4></div>
 						<div className={"row"}>
-							<div className={"col-2"}>
-								<button className={"btn btn-success"} ><i className={"fa fa-check-square"}></i> Finalizar la compra</button>
+							<div className={"col-3"}>
+								<Link to={"check-out"} className={"btn btn-success"} ><i className={"fa fa-check-square"}></i> Finalizar la compra</Link>
 							</div>
 							<div className={"col-2"}>
 								<button className={"btn btn-danger"} onClick={()=>emptyCart()} ><i className={"fa fa-trash"}></i> Cancelar la Compra</button>

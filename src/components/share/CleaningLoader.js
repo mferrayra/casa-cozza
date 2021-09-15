@@ -1,5 +1,5 @@
 /*
-* Componente para el spinner
+* CleaningLoder Component: renderiza un spinner con el titulo de la accion que esta ocurriendo
 */
 
 import Loader from 'react-loader-spinner';

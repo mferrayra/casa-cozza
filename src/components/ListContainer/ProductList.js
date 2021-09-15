@@ -1,6 +1,5 @@
 /*
-* Este componente hace un map de la lista de productos a mostar con el componente idividual del 
-* producto a mostrar.
+* ProductList Component: renderiza una lista de cards de productos (ordenados por el precio en forma descendente)
 */
 
 import { ProductItem } from "./ProductItem"
