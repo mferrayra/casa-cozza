@@ -12,6 +12,14 @@
 Inicia la app con una vista a todos los productos, y se pueden filtrar por categorías en las opciones de menu. Se puede acceder al detalle de cada producto, pero no se puede operar con el carrito si no se está logueado, ni tampoco acceder a las ordenes de compras generadas.
 Para loguearse, clickear el icono de usuario, y aceptar el popup del login mockeado; inmediatamente se habilitará para operar con el carrito (añadir, eliminar, vaciar y generar la orden de compra), como así tambien la opción para visualizar las ordenes de compras generadas.
 
+## Demo
+---
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/demo.gif)
+
+## Desafíos curso
+---
+
 Cumple con los desafíos del curso:
 
 - App React; código fuente en GitHub
