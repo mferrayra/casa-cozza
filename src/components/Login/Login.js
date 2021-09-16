@@ -78,9 +78,12 @@ export const Login = () => {
 
   // para cuando este logueado
   const getLogoutTag = () => {
-    return <Link to="/#" onClick={handleLogout}>
-             <span>{user.names}&nbsp;<i className="fas fa-sign-out-alt fa-2x"></i></span>
-           </Link> 
+    return <div className="pl-3">              
+             <Link to="/#" onClick={handleLogout}>
+               <span><i className="fas fa-sign-out-alt fa-2x"></i></span>
+               <span className="text-info">{user.names}</span>
+             </Link>
+           </div> 
   }
 
   return (

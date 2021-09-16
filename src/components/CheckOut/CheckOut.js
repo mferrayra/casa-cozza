@@ -9,8 +9,11 @@ import  { Redirect  } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext';
 import { generateOrder } from '../../helpers/Order'
 import Swal from 'sweetalert2'
+import Loader from 'react-loader-spinner';
 
 export const CheckOut = () => {
+	// habilitar (o no) navbar
+    const { enableNavBar, setEnableNavBar } = useContext(AppContext)
 	// cantidad añadida al carrito, vacias carrito, carrito
 	const {countCart, emptyCart, cart} = useContext(CartContext)
 	// usuario logueado (mocked)	
@@ -19,7 +22,8 @@ export const CheckOut = () => {
 	// handle submit form
 	const checkout = (event) => {
 		event.preventDefault()
-		generateOrder(user, cart, countCart()).then(res => {
+		setEnableNavBar(false)
+		generateOrder(user, cart, countCart()).then(res => {			
 			Swal.fire({
 	            icon: 'success',
 	            title: 'Su compra fue registrada!',
@@ -29,7 +33,7 @@ export const CheckOut = () => {
 	        emptyCart()	
 		}).catch(err => {
 			console.log(err)
-		})		
+		}).finally(()=>setEnableNavBar(true))		
 	}
 
 	return (
@@ -46,7 +50,12 @@ export const CheckOut = () => {
 							<input type="email" className="form-control mb-3" placeholder="tu email..." required value={user.email} />
 	                    	<input type="text" className="form-control mb-3" placeholder="tu teléfono..." required value={user.phone} />
 	                    	<input type="text" className="form-control mb-3" placeholder="tu domicilio..." required value={user.address} />
-	                    	<button type="submit" className="btn btn-block btn-success btn-round mb-3 text-white">Generar Orden de Compra</button>
+	                    	<div className="d-flex flex-row">
+	                    		<button type="submit" className="btn btn-block btn-success btn-round mb-3 text-white">Generar Orden de Compra</button>
+		                    	{
+		                    		(!enableNavBar) && <Loader type="Circles" color="#00BFFF" height={30} width={30} />
+		                    	}
+	                    	</div>	                    	
 						</form>
 				 	</div>
 				</div> :

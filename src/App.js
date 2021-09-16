@@ -10,6 +10,7 @@ import { CartContextProvider } from './context/CartContext'
 import { AppContextProvider } from './context/AppContext'
 import { CartScreen } from './components/CartScreen/CartScreen'
 import { CheckOut } from './components/CheckOut/CheckOut'
+import { Orders } from './components/Orders/Orders'
 
 function App() {    
   return (
@@ -36,6 +37,9 @@ function App() {
               </Route>              
               <Route path="*/product/:productId">
                   <DetailContainer />
+              </Route>
+              <Route path="/orders">
+                  <Orders />
               </Route>              
               <Route exact path="/shopping-cart">
                 {

@@ -6,7 +6,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductById } from "../../helpers/Product"
 import { ProductDetail } from './ProductDetail'
-import { CleaningLoader } from '../share/CleaningLoader'
+import { CleaningLoader } from '../Share/CleaningLoader'
 import { AppContext } from '../../context/AppContext'
 
 export const DetailContainer = React.memo(() => {
@@ -15,7 +15,7 @@ export const DetailContainer = React.memo(() => {
     // produto   
     const [producto, setProducto] = useState(null)
     // habilitar (o no) navbar
-    const { enableNavBar, setEnableNavBar } = useContext(AppContext) // se desagrupa de UI context para poder habilitar y deshabilitar el navbar y evitar coportamientos no deseados
+    const { enableNavBar, setEnableNavBar } = useContext(AppContext)
 
     // montaje
     useEffect(()=>{

@@ -3,7 +3,7 @@
 */
 import React, { useContext, useEffect, useState } from 'react'
 import { getProducts } from '../../helpers/Product'
-import { CleaningLoader } from '../share/CleaningLoader';
+import { CleaningLoader } from '../Share/CleaningLoader';
 import { ProductList } from './ProductList';
 import { AppContext } from '../../context/AppContext'
 

@@ -6,7 +6,7 @@ import {ReactComponent as LogoCozza} from '../assets/images/logo-cozza.svg';
 import { CartWidget } from './CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../context/AppContext'
-import './share/NavBar.css'
+import './Share/NavBar.css'
 import { Login } from '../components/Login/Login'
 
 export const NavBar = React.memo(() => {
@@ -29,6 +29,9 @@ export const NavBar = React.memo(() => {
         <div className={user ? "" : "disabled"}>
           <CartWidget />
         </div>
+        {
+          (user) && <Link to={"/orders"}>Mis Compras</Link>
+        }
       </div>      
     </header>
   )  

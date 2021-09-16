@@ -8,9 +8,11 @@ const db = getFirestore(getFirebase()) // firestore
 // devuelve una lista de productos (todos o por categoria)
 export const getProducts = async (category) => {
     
-    const products = collection(db, 'products') // collection
+    // collection
+    const products = collection(db, 'products')
     
-    const filter = category ? query(products, where('category', '==', category)) : products // query filter
+    // query filter
+    const filter = category ? query(products, where('category', '==', category)) : products 
  
     const response = await getDocs(filter)
     

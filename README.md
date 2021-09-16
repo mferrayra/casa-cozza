@@ -1,35 +1,48 @@
-# Coder 
-Martin Ferrayra - camada-16930-rj-online
 
-# Desafío 1
-Creación de una app react; código fuente con versión en GitHub.
+    __________________________________________________________________________________
+##Coder: Martin Ferrayra - camada-16930-rj-online*
+    __________________________________________________________________________________
 
-# Desafío 2
-Creación de un componente navbar (NavVar.js) simple.
+##E-Commerce Casa Cozza
 
-# Desafío 3
-Muestra un contenedor con algunos articulos de detergentes mocked
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/logo192.png?raw=true)
 
-# Desafío 4 y 5
-Agrego imágenes, refactorizo para utilizar el router con las opciones:
- - Por default muestra todos los productos
- - En cada opcion muestra productos relacionados con la categoria asociada a la opcion
- - En cada producto permite navegar hacia el detalle (DetailContainer - ProductoDetail) con información adicional de stock y simulando poder comprar o seguir buscando (vuelta hacia atras del path que se encontraba)
+***Funcionamiento básico:***
+Inicia la app con una vista a todos los productos, y se pueden filtrar por categorías en las opciones de menu. Se puede acceder al detalle de cada producto, pero no se puede operar con el carrito si no se está logueado, ni tampoco acceder a las ordenes de compras generadas.
+Para loguearse, clickear el icono de usuario, y aceptar el popup del login mockeado; inmediatamente se habilitará para operar con el carrito (añadir, eliminar, vaciar y generar la orden de compra), como así tambien la opción para visualizar las ordenes de compras generadas.
 
- # Desafío 6 y 7
- Contexto de cesta + Counter
- - Añade a la cesta cantidades de productos validadas por el contador segun stock
- - Elimina producto seleccionado a comprar en el resumen de compra
- - Vacía la cesta en el resumen de compra
+Cumple con los desafíos del curso:
 
- # Desafío 7 y 8
- Firebase + CartScreen
- - Agrega un spinner e inhabilita el navbar cuando se clickea una opción
- - Conecta con firebase (firebase 9)
- - Filtra por menu como lo hacía cuando estaba mockeado 
- - Muestra el CartScreen totalizado por categoria y por todal final; y permite cancelar la compra (vaciar la cesta)
- - Extras: comentarios, autenticación con propósito de simulación para agregar funcionalidad
+- App React; código fuente en GitHub
+- Menú E-Commerce (navbar)
+- ListContainer, ProductList, ProductItem: mock asincrónico (promise) con efecto de montaje
+- DetailDetailContainer, ProductDetail: mock asincronico (promise) con efecto de montaje
+- Primera entrega del proyecto final: BrowserRouter => navegación a todos los productos y por categoria utilizando efectos y hooks
+- Cart Context y Counter (Parte 1)
+- Cart Context y Counter (Parte 2)
+- Cart View e Item Collection (Parte 1)
+- Cart View e Item Collection (Parte 2) - Reemplazo del mockeo por Firebase (Productos)
+- Item Collection II
 
- # Desafío 9
- Firebase Item Collection II
- - Checkout: Genera una orden de compra (firebase 9)
+##Extras
+> ¡User mocked en login popup; lista de ordenes de compra generadas en Firebase!
+
+##Dependecias agregadas al proyecto
+
+ ```npm i react-bootstrap
+ ```
+
+ ```npm i react-icons
+ ```
+
+ ```npm i react-loader-spinner 
+ ```
+
+ ```npm i react-modal 
+ ```
+
+ ```npm i react-number-format 
+ ```
+
+ ```npm i sweetalert2 
+ ```

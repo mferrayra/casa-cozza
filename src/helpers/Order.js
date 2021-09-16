@@ -9,12 +9,10 @@ const db = getFirestore(getFirebase()) // firestore
 // genera una orden de compra en la db (firebase)
 export const generateOrder = (buyer, cart, total) => {
 	
-	
-
 	return new Promise(async (resolve, reject) => {		
 		const newOrder = {
 	        buyer: buyer,
-	        items: cart,
+	        products: cart,
 	        total: total,
 	        date: Timestamp.fromDate(new Date())
 	    }
@@ -26,8 +24,6 @@ export const generateOrder = (buyer, cart, total) => {
 	    const productsToUpdateStock = await getDocs(filter)
 
 	    const wBatch = writeBatch(db)
-
-	    //const queryProduct = await productsToUpdateStock.get()
 
         const outOfStock = []
 
@@ -55,4 +51,15 @@ export const generateOrder = (buyer, cart, total) => {
             })
         }
 	})
+}
+
+export const getOrders = async () => {
+    // collection
+    const orders = collection(db, 'orders')
+    
+    const response = await getDocs(orders)
+    
+    return new Promise((resolve, reject) => {            
+        resolve(response.docs.map((doc) => ({...doc.data(), id: doc.id})))  
+    })
 }
