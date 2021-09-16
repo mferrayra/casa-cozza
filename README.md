@@ -43,3 +43,38 @@ $ npm i react-modal
 $ npm i react-number-format
 
 $ npm i sweetalert2
+
+## Capturas
+---
+
+***Todos los Productos***
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/todos-los-productos.png)
+
+***Login Mocked***
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/login.png)
+
+***Detalle Producto***
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/un-producto.png)
+
+***Carrito Vacío***
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/carrito-vacio.png)
+
+***Carrito con Productos***
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/carrito.png)
+
+***Check out***
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/checkout.png)
+
+***Compra Registrada***
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/compra-registrada.png)
+
+***Ordenes de Compra Hechas***
+
+![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/capturas/ordenes-compra.png)
