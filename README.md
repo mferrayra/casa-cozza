@@ -28,7 +28,7 @@ Cumple con los desafíos del curso:
 ## Extras
 ---
 
-> ¡User mocked en login popup; lista de ordenes de compra generadas en Firebase!
+ ¡User mocked en login popup; lista de ordenes de compra generadas en Firebase!
 
 ## Dependecias agregadas al proyecto
 ---

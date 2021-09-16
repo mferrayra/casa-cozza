@@ -28,7 +28,7 @@ export const Orders = React.memo(() => {
 					<div key={order.id} className="d-flex flex-column m-3">
 						<div className="d-flex flex-row">
 							<div className="col-4">
-								<b>Fecha:</b> {order.date}
+								<b>Fecha:</b> {new Date(order.date.seconds*1000).toLocaleString()}
 							</div>
 							<div className="col-4">
 								<b>Orden:</b> {order.id}
