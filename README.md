@@ -46,6 +46,8 @@ $ npm i react-icons
 
 $ npm i react-loader-spinner 
 
+$ npm i firebase
+
 $ npm i react-modal 
 
 $ npm i react-number-format
