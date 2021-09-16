@@ -1,9 +1,10 @@
 
----
-##Coder: Martin Ferrayra - camada-16930-rj-online*
+
+## Coder: Martin Ferrayra - camada-16930-rj-online*
 ---
 
-##E-Commerce Casa Cozza
+## E-Commerce Casa Cozza
+---
 
 ![Screenshot](https://github.com/mferrayra/casa-cozza/blob/main/public/images/logo192.png?raw=true)
 
@@ -24,25 +25,21 @@ Cumple con los desafíos del curso:
 - Cart View e Item Collection (Parte 2) - Reemplazo del mockeo por Firebase (Productos)
 - Item Collection II
 
-##Extras
+## Extras
+---
+
 > ¡User mocked en login popup; lista de ordenes de compra generadas en Firebase!
 
-##Dependecias agregadas al proyecto
+## Dependecias agregadas al proyecto
+---
+$ npm i react-bootstrap
 
- ```npm i react-bootstrap
- ```
+$ npm i react-icons
 
- ```npm i react-icons
- ```
+$ npm i react-loader-spinner 
 
- ```npm i react-loader-spinner 
- ```
+$ npm i react-modal 
 
- ```npm i react-modal 
- ```
+$ npm i react-number-format
 
- ```npm i react-number-format 
- ```
-
- ```npm i sweetalert2 
- ```
+$ npm i sweetalert2
